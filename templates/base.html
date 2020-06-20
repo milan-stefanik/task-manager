@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+
+    <!--CSS Style-->
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
+</head>
+
+<body>
+	<div class="container">
+	{% block content %}
+	{% endblock %}
+    </div>
+
+	<!--Import jquery-->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!--Import Materialize-->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+	<script type="text/javascript">
+        /* Materialize Functions */
+        $(document).ready(function(){
+            /* Materialize Collapsible */
+            $('.collapsible').collapsible();
+            
+            /* Materialize Date Picker */
+            $(".datepicker").datepicker({
+                format: "dd mmm yyyy",
+                yearRange: 3,
+                showClearBtn: true,
+                i18n: {
+                    clear: "Clear",
+                    done: "Select",
+                    cancel: "Cancel"
+                }
+            });
+
+            /* Materialize Select */
+            $('select').formSelect();
+        });
+
+
+	</script>
+</body>
+
+</html>
