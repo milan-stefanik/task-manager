@@ -13,7 +13,28 @@
 </head>
 
 <body>
-	<div class="container">
+	<header>
+         <nav>
+            <div class="nav-wrapper">
+                <a href="{{url_for('get_tasks')}}" class="brand-logo">Task Manager</a>
+                <a href="#" data-activates="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{url_for('get_tasks')}}">Home</a></li>
+                    <li><a href="{{url_for('add_task')}}">New Task</a></li>
+                    <li><a href="{{url_for('get_categories')}}">Manage Categories</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="{{url_for('get_tasks')}}">Home</a></li>
+            <li><a href="{{url_for('add_task')}}">New Task</a></li>
+            <li><a href="{{url_for('get_categories')}}">Manage Categories</a></li>
+        </ul>
+    </header>
+    
+    
+    <div class="container">
 	{% block content %}
 	{% endblock %}
     </div>
@@ -27,6 +48,9 @@
 	<script type="text/javascript">
         /* Materialize Functions */
         $(document).ready(function(){
+            /* Materialize Navbar */
+            $('.sidenav').sidenav();
+            
             /* Materialize Collapsible */
             $('.collapsible').collapsible();
             
